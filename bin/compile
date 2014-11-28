@@ -64,6 +64,11 @@ else
   unset MAVEN_SETTINGS_OPT
 fi
 
+# maven available to use at runtime
+for DIR in ".m2" ".maven" ; do
+  cp -r $CACHE_DIR/$DIR $BUILD_DIR/$DIR
+done
+
 # change to build dir to run maven
 cd $BUILD_DIR
 
